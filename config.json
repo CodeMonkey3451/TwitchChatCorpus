@@ -1,5 +1,7 @@
 {
-	"clientID": "",
 	"Twitch-Chat-Downloader_directory": "",
+	"clientID": "",
+	"ChatterBotName": "",
+	"ChatterBotDatabase": "",
 	"ignore_list": []
 }
