@@ -7,6 +7,10 @@ from tools.logparse import LogParse
 LOGPATH = './raw/'
 TRAINPATH = './dialogs/'
 
+"""Check if output directory exists."""
+if not os.path.exists(TRAINPATH):
+	os.makedirs(TRAINPATH)
+
 """Iterate through all available logs."""
 directory = os.fsencode(LOGPATH)
 for file in os.listdir(directory):
