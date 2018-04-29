@@ -104,6 +104,7 @@ class TwitchUtils():
             logging.info("Seems no such user as {}".format(username))
             raise UserNotFoundError("No user with login id of {}".format(username))
 
+
     def getUserDataFromID(self, user_id):
         """Get Twitch user data of a given id."""
         url = USER_ID_API.format(user_id)
@@ -133,5 +134,5 @@ class TwitchUtils():
         videoIDs = []
         for videos in obj["videos"]:
             videoIDs.append(int(videos["_id"].replace("v", "")))
-        npages = obj["_total"]
-        return videoIDs, npages
+        nvideos = obj["_total"]
+        return videoIDs, nvideos
