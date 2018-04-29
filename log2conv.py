@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Extract conversation from chat logs."""
 
 import os
