@@ -117,20 +117,20 @@ class TwitchUtils():
         return data
 
 
-    def getVodObject(self, channelID, page = 0):
-        """Get Twitch VOD object from channel id and a specific page."""
+    def getVodObject(self, channelID, page = 0, limit = 10):
+        """Get Twitch VOD object from channel id and a specific page.
+        Limit sets the amount of results per page (maximum is 100)."""
         url = TWITCH_VOD_API.format(channelID)
 
-        if page > 0:
-            url += '?offset={}'.format(page)
+        url += '?limit={0}&offset={1}'.format(limit, page)
 
         return self.getJSONObjectFromTwitchAPI(url)
 
 
-    def getVodIds(self, channelID, page = 0):
+    def getVodIds(self, channelID, page = 0, limit = 10):
         """Get Twitch VOD IDs from channel id and a specific page.
         Second return is maximum pages (including 0)."""
-        obj = self.getVodObject(channelID, page)
+        obj = self.getVodObject(channelID, page, limit)
         videoIDs = []
         for videos in obj["videos"]:
             videoIDs.append(int(videos["_id"].replace("v", "")))
