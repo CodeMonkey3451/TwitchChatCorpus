@@ -32,6 +32,10 @@ TOOLS_DIR="$ROOT_DIR/tools"
 TCD_DIR=`readJson config.json Twitch-Chat-Downloader_directory`
 
 cd "$TOOLS_DIR"
+# Update settings.json and copy it to Twitch-Chat-Downloader-directory:
+python3 editsettings.py
+cp "$TOOLS_DIR/settings.json" "$TCD_DIR/settings.json"
+
 python3 getvideoids.py |
  	while IFS= read -r line
   	cd "$TCD_DIR"
