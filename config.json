@@ -1,7 +1,9 @@
 {
 	"Twitch-Chat-Downloader_directory": "",
 	"clientID": "",
+	"usernames": [],
+	"ignore_list": [],
+	"banphrases": [],
 	"ChatterBotName": "",
-	"ChatterBotDatabase": "",
-	"ignore_list": []
+	"ChatterBotDatabase": ""
 }
